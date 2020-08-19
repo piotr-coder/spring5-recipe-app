@@ -1,2 +1,2 @@
-https://circleci.com/gh/piotr-coder/spring5-recipe-app
+[![CircleCI](https://circleci.com/gh/piotr-coder/spring5-recipe-app.svg?style=svg&circle-token=<5b0f9792592577429937ef26ce4067c57ded8e77>)](<https://github.com/piotr-coder/spring5-recipe-app>)
 # spring5-recipe-app
