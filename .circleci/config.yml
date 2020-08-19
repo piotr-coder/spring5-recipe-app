@@ -1,4 +1,3 @@
-version: 2
 jobs:
   maven/test:
     docker:
@@ -26,3 +25,4 @@ workflows:
   maven_test:
     jobs:
     - maven/test
+    version: 2
