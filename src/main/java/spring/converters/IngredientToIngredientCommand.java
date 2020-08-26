@@ -12,9 +12,9 @@ import spring.domain.Ingredient;
  */
 @Component
 public class IngredientToIngredientCommand implements Converter<Ingredient, IngredientCommand> {
-    private final spring.converters.UnitOfMeasureToUnitOfMeasureCommand uomConverter;
+    private final UnitOfMeasureToUnitOfMeasureCommand uomConverter;
 
-    public IngredientToIngredientCommand(spring.converters.UnitOfMeasureToUnitOfMeasureCommand uomConverter) {
+    public IngredientToIngredientCommand(UnitOfMeasureToUnitOfMeasureCommand uomConverter) {
         this.uomConverter = uomConverter;
     }
 
