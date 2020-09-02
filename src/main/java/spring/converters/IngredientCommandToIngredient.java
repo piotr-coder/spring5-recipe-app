@@ -5,15 +5,16 @@ import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 import spring.commands.IngredientCommand;
 import spring.domain.Ingredient;
+import spring.domain.Recipe;
 
 /**
  * Created by Piotr on 2020-08-18
  */
 @Component
 public class IngredientCommandToIngredient implements Converter<IngredientCommand, Ingredient> {
-    private final spring.converters.UnitOfMeasureCommandToUnitOfMeasure uomConverter;
+    private final UnitOfMeasureCommandToUnitOfMeasure uomConverter;
 
-    public IngredientCommandToIngredient(spring.converters.UnitOfMeasureCommandToUnitOfMeasure uomConverter) {
+    public IngredientCommandToIngredient(UnitOfMeasureCommandToUnitOfMeasure uomConverter) {
         this.uomConverter = uomConverter;
     }
 
@@ -25,6 +26,14 @@ public class IngredientCommandToIngredient implements Converter<IngredientComman
         }
         final Ingredient ingredient = new Ingredient();
         ingredient.setId(source.getId());
+
+        if(source.getRecipeId() != null){
+            Recipe recipe = new Recipe();
+            recipe.setId(source.getRecipeId());
+            ingredient.setRecipe(recipe);
+            recipe.addIngredient(ingredient);
+        }
+
         ingredient.setAmount(source.getAmount());
         ingredient.setDescription(source.getDescription());
         ingredient.setUom(uomConverter.convert(source.getUom()));
