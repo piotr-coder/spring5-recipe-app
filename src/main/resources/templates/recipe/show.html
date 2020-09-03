@@ -50,10 +50,10 @@
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <img src="static/images/guacamole400x400WithX.jpg"
-                                     th:src="@{'/recipe/' + ${recipe.id} + '/recipeimage'}"
-                                     <!--th:src="@{/images/guacamole400x400WithX.jpg}"-->
-                                     width="200" height="200">
+                                <img src="static/images/guacamole400x400WithX.jpg" alt="image is missing"
+                                     th:src="@{/images/guacamole400x400WithX.jpg}"
+                                     style="float:right;width:200px;height:200px;">
+                                <!--th:src="@{'/recipe/' + ${recipe.id} + '/recipeimage'}"-->
                             </div>
                         </div>
                         <div class="row">
